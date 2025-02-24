@@ -1,0 +1,13 @@
+{
+  "name": "Smart Link Previewer",
+  "version": "1.0.0",
+  "description": "Expands URLs into rich previews with titles, descriptions, and thumbnails for platforms like GitHub and YouTube.",
+  "type": "modifier",
+  "settings": {
+    "apiEndpoints": {
+      "github": "https://api.github.com",
+      "youtube": "https://www.googleapis.com/youtube/v3"
+    },
+    "defaultTimeout": 5000
+  }
+}
