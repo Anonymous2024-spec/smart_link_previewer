@@ -11,7 +11,7 @@
       "app_url": "https://anonymous2024-spec.github.io/smart_link_previewer/",
       "background_color": "#1E90FF"
     },
-    "integration_category": "Message Enhancement",
+    "integration_category": "Monitoring & Logging",
     "integration_type": "modifier",
     "is_active": true,
     "output": [
