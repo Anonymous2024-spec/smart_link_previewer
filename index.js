@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const { extractUrls } = require("./urlParser");
 const { fetchMetadata } = require("./metadataFetcher");
 const { renderPreview } = require("./previewRenderer");
@@ -6,9 +7,16 @@ const { renderPreview } = require("./previewRenderer");
 const app = express();
 const port = 3000;
 
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 
-// Endpoint to simulate processing a Telex message
+// Serve the integration.json file
+app.get("/smart-link-previewer/integration.json", (req, res) => {
+  res.sendFile(path.join(__dirname, "integration.json"));
+});
+
+// Endpoint to process Telex messages
 app.post("/process-message", async (req, res) => {
   const { message } = req.body;
   if (!message) {
@@ -20,7 +28,7 @@ app.post("/process-message", async (req, res) => {
     return res.send({ preview: "No URL found in message." });
   }
 
-  // For demonstration, we process the first URL only
+  // Process the first URL only
   const metadata = await fetchMetadata(urls[0]);
   const preview = renderPreview(metadata);
 
