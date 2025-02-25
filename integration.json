@@ -1,14 +1,77 @@
 {
-  "name": "Smart Link Previewer",
-  "version": "1.0.0",
-  "description": "Expands URLs into rich previews with titles, descriptions, and thumbnails for platforms like GitHub and YouTube.",
-  "type": "modifier",
-  "settings": {
-    "apiEndpoints": {
-      "github": "https://api.github.com",
-      "youtube": "https://www.googleapis.com/youtube/v3"
+  "data": {
+    "date": {
+      "created_at": "2025-02-24",
+      "updated_at": "2025-02-24"
     },
-    "defaultTimeout": 5000
-  },
-  "data": {}
+    "descriptions": {
+      "app_description": "Expands URLs into rich previews with titles, descriptions, and thumbnails for major platforms like GitHub and YouTube.",
+      "app_logo": "https://your-logo-url.com/logo.png",
+      "app_name": "Smart Link Previewer",
+      "app_url": "https://anonymous2024-spec.github.io/smart_link_previewer/",
+      "background_color": "#1E90FF"
+    },
+    "integration_category": "Message Enhancement",
+    "integration_type": "modifier",
+    "is_active": true,
+    "output": [
+      {
+        "label": "Telex Channel",
+        "value": true
+      }
+    ],
+    "key_features": [
+      "Automatically expands shared URLs into rich previews.",
+      "Supports GitHub, YouTube, and news sites.",
+      "Displays thumbnails, titles, and descriptions for better readability.",
+      "Works seamlessly within Telex messages."
+    ],
+    "permissions": {
+      "monitoring_user": {
+        "always_online": true,
+        "display_name": "Smart Link Previewer Bot"
+      }
+    },
+    "settings": [
+      {
+        "label": "Enable YouTube Previews",
+        "type": "checkbox",
+        "required": true,
+        "default": "Yes"
+      },
+      {
+        "label": "Enable GitHub Previews",
+        "type": "checkbox",
+        "required": true,
+        "default": "Yes"
+      },
+      {
+        "label": "Enable News Previews",
+        "type": "checkbox",
+        "required": false,
+        "default": "Yes"
+      },
+      {
+        "label": "Maximum Preview Length",
+        "type": "number",
+        "required": false,
+        "default": "300"
+      },
+      {
+        "label": "Thumbnail Display",
+        "type": "dropdown",
+        "required": true,
+        "default": "Enabled",
+        "options": ["Enabled", "Disabled"]
+      },
+      {
+        "label": "Alert Admin on Errors",
+        "type": "multi-checkbox",
+        "required": true,
+        "default": "Super-Admin",
+        "options": ["Super-Admin", "Admin", "Manager", "Developer"]
+      }
+    ],
+    "target_url": "https://your-api-url.com/process-message"
+  }
 }
