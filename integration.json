@@ -72,6 +72,6 @@
         "options": ["Super-Admin", "Admin", "Manager", "Developer"]
       }
     ],
-    "target_url": "https://your-api-url.com/process-message"
+    "target_url": "https://smart-link-previewer.onrender.com/process-message"
   }
 }
